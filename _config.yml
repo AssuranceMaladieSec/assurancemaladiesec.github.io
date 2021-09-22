@@ -21,17 +21,29 @@
 title: Assurance Maladie Security Team website
 email: abuse@assurance-maladie.fr
 description: >- # this means to ignore newlines until "baseurl:"
-  This website is the site of the IT Security Department of Assurance Maladie 
-  (French public Health Insurance) 
+  IT Security Department of Assurance Maladie (French public Health Insurance) 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  AssuranceMaladieSec
 
 # Build settings
-theme: minima
+# theme: minima
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
 plugins:
   - jekyll-feed
+
+# So Simple parameters
+logo: "/images/logo.jpg"
+google_fonts:
+  - name: "Source Sans Pro"
+    weights: "400,400i,700,700i"
+  - name: "Lora"
+    weights: "400,400i,700,700i"
+read_time: true
+words_per_minute: 200
+search_full_content: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
