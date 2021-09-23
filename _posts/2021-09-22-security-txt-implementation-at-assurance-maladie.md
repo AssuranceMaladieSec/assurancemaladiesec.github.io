@@ -10,13 +10,13 @@ categories: secops
 
 # Security vulnerabilities reporting: the problem(s)
 
-**TL;DR:** Finding how to report vulnerabilities found on web sites and web services has always been challenging for security researchers. But it has also been a challenge for companies and blue teams to publish contact informations in a consistent way.
+**TL;DR:** Finding how to report vulnerabilities detected on web sites and web services has always been challenging for security researchers. But it has also been a challenge for companies and blue teams to publish contact informations in a consistent way accross their sites and services.
 
 **Detailled:**
 
 * **Security researchers side:** they want to find a way to report their findings. Until recently, it is only possible in a manual and unconsistant way: 
   * check if any contact are available on the website, 
-  * use one of the email addresses commonly available inside companies (abuse, admin etc) but without having any certainty that their report will be .
+  * use one of the email addresses commonly available inside companies (abuse, admin etc) but without having any assurance that their report will be .
 * **Blue teams side:** inside companies, choosing the good way to setup a proper reporting channel and overcoming all sorts of resistance (cultural, organization, technical) are not without challenges. 
 
 # Challenges encountered at Assurance Maladie
@@ -39,23 +39,23 @@ These services are:
 What it is? 
 * It is an [Internet Draft](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt)
 * This RFC defines among others things a well-known URI `.well-known/security.txt` (and fallback URI `/security.txt`)
-* These URI point to the security.txt file.
-* The security.txt file contains several standardized records allowing websites owners to set contact infos, reporting policy, GPG key to use and so on.
+* These URI point to the `security.txt` file.
+* The `security.txt` file contains several standardized records allowing websites owners to set contact infos, reporting policy, GPG key to use and so on.
 
-<u>Example:</u> we can see on this image the contents of the [Deepl website](https://www.deepl.com/)  security.txt file. Its content is displayed through the Firefox extension security.txt :
+<u>Example:</u> we can see on this image the contents of the [Deepl website](https://www.deepl.com/)  `security.txt` file. Its content is displayed through the Firefox extension security.txt :
 
 ![security.txt example](/images/posts/securitytxt-example.png)
 
-All the details of the security.txt initiative (URI, records etc) are documented on [https://securitytxt.org/](https://securitytxt.org/).
+All the details of the `security.txt` initiative (URI, records etc) are documented on [https://securitytxt.org/](https://securitytxt.org/).
 
-# Assurance Maladie implementation of security.txt
+# Assurance Maladie implementation of `security.txt`
 
 ## The naive way
-A simple yet naive way of deploy a security.txt file is to ask all services managers to get the file and incorporate into their service file system.
+A simple yet naive way of deploy a `security.txt` file is to ask all services managers to get the file and incorporate into their service file system.
 
 ![security.txt N copies](/images/posts/n-copies-of-security-txt.png)
 
-Your security.txt TODO will fastly become like:
+Your `security.txt` TODO will fastly become like:
 * **Task 1: try to convince & hope for exhaustivity.** The Security team will have to fight to convince a majority of the services managers.
 * **Task 2: wait & depend.** The Security team waits until the file is deployed. Each service will deploy at its own rythm and with its own agenda. 
 * **Task 3: ask for update & pray.** You will have to redo the same entire job at each update of the file content!
@@ -70,7 +70,7 @@ As a lot of our important services are behind load balancers/reverse proxies **w
 
 More precisely, we decided to:
 * **intercept** requests asking the 2 URI `/security.txt` and `/.well-known/security.txt` for all services behind the LB/reverse proxies.
-* **get the content of the security.txt file** from a centralized server (OK, 2 for HA) and send it back to clients.
+* **get the content of the `security.txt` file** from a centralized server (OK, from 2 for HA) and send it back to clients.
 
 A lot of advantages came up with this decision:
 * **Zero impact on websites/services**. No deployment required, no update to manage on websites servers etc.
@@ -81,7 +81,7 @@ A lot of advantages came up with this decision:
 
 ## Implementation details
 
-According our existing (but also refreshed due this deployment) reporting workflow, we decided to use the following records inside our security.txt file:
+According our existing (but also refreshed due to this deployment) reporting workflow, we decided to use the following records inside our security.txt file:
 * **`Contact:`** through this record, we push the abuse@ email address as main contact point.
 * **`Preferred-Languages:`** the languages we speak/understand.
 * **`Encryption:`** URL of the GnuPG public key of the abuse@ email address.
@@ -107,3 +107,8 @@ In our case, putting down things in a publicly available reporting policy help u
 Security.txt intiative is a simple and cost effective solution to improve a cybersecurity challenge online: the vulnerability reporting channel announcement. 
 
 Using _cleverly_ your technical stack to deploy it across most of your services will allow you to avoid the main usual (mainly organizational!) caveats that Security faced inside companies when it comes to apply Security to corporate websites and webservices.
+
+# Resources
+* Our security.txt file: [https://assure.ameli.fr/.well-known/security.txt](https://assure.ameli.fr/.well-known/security.txt)
+* The security.txt initiative website: [https://securitytxt.org/](https://securitytxt.org/)
+* The security.txt RFC: [https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12)

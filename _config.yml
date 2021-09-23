@@ -44,6 +44,7 @@ read_time: true
 words_per_minute: 200
 search_full_content: true
 date_format: "%d-%m-%Y"
+permalink: /:title:output_ext
 
 
 # Exclude from processing.
