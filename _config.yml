@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Assurance Maladie Security Team website
+title: Assurance Maladie Security Team 
 email: abuse@assurance-maladie.fr
 description: >- # this means to ignore newlines until "baseurl:"
-  IT Security Department of Assurance Maladie (French public Health Insurance) 
+  Security ressources and feedback shared by the IT Security Department of Assurance Maladie <br>(French public Health Insurance) 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
@@ -43,6 +43,7 @@ google_fonts:
 read_time: true
 words_per_minute: 200
 search_full_content: true
+date_format: "%d-%m-%Y"
 
 
 # Exclude from processing.
