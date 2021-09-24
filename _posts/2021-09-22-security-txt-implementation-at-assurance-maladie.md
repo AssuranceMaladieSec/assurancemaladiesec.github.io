@@ -110,17 +110,17 @@ It is also a sure external hosting as we have decided to **sign all of our commi
 
 ## Final Benefits on the reporting side
 
-We are now at the end of September 2021, several months after the deployment of `security.txt` file on most of our sites/services which occured during the first quarter of 2021.
+At time of writing this post (end of September 2021), we are several months after the deployment of `security.txt` file on most of our sites/services which occured during the first quarter of 2021.
 
-And finally, you have done all of this **for what kind of results**, mate?
+And finally, the question is: _"You have done all of this **for what kind of results**, mate?"_
 
 * **Before the deployment:** we have received **very few if any external reports** during many years.
 
-* **Several months after** (end of September 2021): **we have received a dozen of security vulnerabilities reports** through this new announcement channel. Some of them have notably led us to focus on not previously investigated grey areas of our services (sofware stack components, way to expose some services and so on). Thank to all reporters for that!
+* **Several months after the deployment: we have received a dozen of security vulnerabilities reports** through this new announcement channel. Some of them have notably led us to focus on not previously investigated grey areas of our services (sofware stack components, way to expose some services and so on). Thank to all reporters for that!
 
 * **Why it is so effective?** After asking the reporters (who are usually bug bounty hunters or infosec profesionals), it is because `security.txt` is used by them on a daily basis as the main way to reach out Security teams during reporting phase of their findings.
 
-* **Security researchers acknowledgement:** After validation, and fix if necessary, of these vulnerabilities, **we credit the security vulnerabilities reporters** on [our acknowledgement page].
+* **Security researchers acknowledgement:** After validation, and fix if necessary, of these vulnerabilities, **we credit the security vulnerabilities reporters** on [our acknowledgement page](https://assurancemaladiesec.github.io/abuse/thanks/).
 
 ## Limitations
 
@@ -128,7 +128,7 @@ Of course, this centralized deployment does not provide 100% service coverage as
 
 And, even if you want to use `security.txt`, **it is not a silver bullet!**
 
-Before using it, you will have to set up a well defined vulnerability management inside your company. Without it, no magic will happen. 
+Before using it, you will have to set up a well defined vulnerability management workflow inside your company. Without it, no magic will happen. 
 
 In our case, putting down things in a publicly available reporting policy help us to clarify the internal reporting channel, roles or how we want to acknowledge reporters for example.
 
