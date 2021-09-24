@@ -16,7 +16,7 @@ categories: secops
 
 * **Security researchers side:** they want to find a way to report their findings. Until recently, it is only possible in a manual and unconsistant way: 
   * check if any contact are available on the website, 
-  * use one of the email addresses commonly available inside companies (abuse, admin etc) but without having any assurance that their report will be .
+  * use one of the email addresses commonly available inside companies (abuse, admin etc) but without having any assurance that their report will be processed (correctly).
 * **Blue teams side:** inside companies, choosing the good way to setup a proper reporting channel and overcoming all sorts of resistance (cultural, organization, technical) are not without challenges. 
 
 **Impacts:**
@@ -80,7 +80,9 @@ As you can see, one of the Security team darkest nightmares (aka _"Security depe
 
 ![security.txt N copies](/images/posts/centralized-security-txt.png)
 
-As a lot of our important services are behind load balancers/reverse proxies **we manage**, we decided that using these **central** IT components would be interesting.
+We host some of the biggest public web sites in France (our main service has 40M reular users, millions connections on a daily basis).
+
+So our services are behind load balancers/reverse proxies that **we manage**. Due to this fact, we decided that using these **central** IT components would be interesting.
 
 More precisely, we decided to:
 * **intercept** requests asking the 2 URI `/security.txt` and `/.well-known/security.txt` for all services behind the LB/reverse proxies.
@@ -110,13 +112,13 @@ It is also a sure external hosting as we have decided to **sign all of our commi
 
 ## Final Benefits on the reporting side
 
-At time of writing this post (end of September 2021), we are several months after the deployment of `security.txt` file on most of our sites/services which occured during the first quarter of 2021.
+At time of writing this post (end of September 2021), we are one year and a half after the deployment of `security.txt` file on most of our sites/services which occured during the first quarter of 2020.
 
 And finally, the question is: _"You have done all of this **for what kind of results**, mate?"_
 
 * **Before the deployment:** we have received **very few if any external reports** during many years.
 
-* **Several months after the deployment: we have received a dozen of security vulnerabilities reports** through this new announcement channel. Some of them have notably led us to focus on not previously investigated grey areas of our services (sofware stack components, way to expose some services and so on). Thank to all reporters for that!
+* **One year and a half after the deployment: we have received a dozen of security vulnerabilities reports** through this new announcement channel. Some of them have notably led us to focus on not previously investigated grey areas of our services (sofware stack components, way to expose some services and so on). Another interesting point: we have received no "noise" through this channel. No fake reports, no out of context sollicitations. Thank to all reporters for that!
 
 * **Why it is so effective?** After asking the reporters (who are usually bug bounty hunters or infosec profesionals), it is because `security.txt` is used by them on a daily basis as the main way to reach out Security teams during reporting phase of their findings.
 
