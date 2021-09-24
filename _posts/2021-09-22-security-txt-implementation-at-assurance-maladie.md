@@ -65,7 +65,7 @@ As many companies, we had not any consistent informations on our web sites and s
 So when emerged the `security.txt` initiative, we looked at it with a very interested attention.
 
 ## The naive way
-A simple yet naive way of deploy a `security.txt` file is to ask all services managers to get the file and incorporate into their service file system.
+A simple yet naive way to deploy a `security.txt` file is to ask all services managers to get the file and incorporate into their service file system.
 
 ![security.txt N copies](/images/posts/n-copies-of-security-txt.png)
 
@@ -88,14 +88,16 @@ More precisely, we decided to:
 
 A lot of advantages came up with this decision:
 * **Zero impact on websites/services**. No deployment required, no update to manage on websites servers etc.
-* **Security deployment not depending from services project managers approval**. And _"it is Good(tm)!"_.
+* **Security deployment not depending from services project managers approval**. And _"it is a Good thing(tm)!"_.
 * **One file to rule them all**. You manage the vulnerabilities reporting information you provide through a single copy of a file. First deployment and next iterations will be easy and under your fully and own control.
 
-**Bonus point:** as we provide a GnuPG public key to reporters, **we decided to <u>digitally sign</u> our security.txt file** with the corresponding private key. Effectively, compromised files are [part of the threat model](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt#section-6.1) included in the RFC. So [digital signature](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt#section-3.3) is a recommended measure. By this way, we can ask our external services providers that operate services for us to deploy our security.txt (example for [www.ameli.fr](https://www.ameli.fr/security.txt)) without worrying about file alteration. We are able to check the file integrity at any moment.
+**Bonus point:** 
+* **Medium: digital signature.** As we provide a GnuPG public key to reporters, we decided to digitally sign our `security.txt` file with the corresponding private key. Effectively, compromised files are [part of the threat model](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt#section-6.1) included in the RFC.  
+* **Impact: providing a secured way to publish `security.txt` on externally managed sites.** We can then ask our external services providers that operate services for us to deploy our `security.txt` file (example for [www.ameli.fr](https://www.ameli.fr/security.txt)) without worrying about silent file alteration as we are able to check the file integrity at any moment.
 
 ## Implementation details
 
-According our existing (but also refreshed due to this deployment) reporting workflow, we decided to use the following records inside our security.txt file:
+According to our existing reporting workflow, we decided to use the following records inside our `security.txt` file:
 * **`Contact:`** through this record, we push the abuse@ email address as main contact point.
 * **`Preferred-Languages:`** the languages we speak/understand.
 * **`Encryption:`** URL of the GnuPG public key of the abuse@ email address.
@@ -106,11 +108,25 @@ According our existing (but also refreshed due to this deployment) reporting wor
 
 It is also a sure external hosting as we have decided to **sign all of our commits**, not only for code we published but also for static ressources like reporting policy web page or GnuPG public key file.
 
+## Final Benefits on the reporting side
+
+We are now at the end of September 2021, several months after the deployment of `security.txt` file on most of our sites/services which occured during the first quarter of 2021.
+
+And finally, you have done all of this **for what kind of results**, mate?
+
+* **Before the deployment:** we have received **very few if any external reports** during many years.
+
+* **Several months after** (end of September 2021): **we have received a dozen of security vulnerabilities reports** through this new announcement channel. Some of them have notably led us to focus on not previously investigated grey areas of our services (sofware stack components, way to expose some services and so on). Thank to all reporters for that!
+
+* **Why it is so effective?** After asking the reporters (who are usually bug bounty hunters or infosec profesionals), it is because `security.txt` is used by them on a daily basis as the main way to reach out Security teams during reporting phase of their findings.
+
+* **Security researchers acknowledgement:** After validation, and fix if necessary, of these vulnerabilities, **we credit the security vulnerabilities reporters** on [our acknowledgement page].
+
 ## Limitations
 
-Of course, this centralized deployment does not provide 100% service coverage as we also have SaaS or external hosted services. But as we do not have a lot of them, we can reach a good global coverage without a not to big effort of security.txt deployment among these external providers.
+Of course, this centralized deployment does not provide 100% service coverage as we also have SaaS or external hosted services. But as we do not have a lot of them, we can reach a good global coverage without a not to big effort of `security.txt` deployment among these external providers.
 
-And, even if you want to use security.txt, it is not a silver bullet!
+And, even if you want to use `security.txt`, **it is not a silver bullet!**
 
 Before using it, you will have to set up a well defined vulnerability management inside your company. Without it, no magic will happen. 
 
@@ -118,7 +134,7 @@ In our case, putting down things in a publicly available reporting policy help u
 
 # Conclusion
 
-Security.txt intiative is a simple and cost effective solution to improve a cybersecurity challenge online: the vulnerability reporting channel announcement. 
+`Security.txt` intiative is a simple and cost effective solution to improve a cybersecurity challenge online: the vulnerability reporting channel announcement. 
 
 Using _cleverly_ your technical stack to deploy it across most of your services will allow you to avoid the main usual (mainly organizational!) caveats that Security faced inside companies when it comes to apply Security to corporate websites and webservices.
 
@@ -126,3 +142,4 @@ Using _cleverly_ your technical stack to deploy it across most of your services 
 * Our security.txt file: [https://assure.ameli.fr/.well-known/security.txt](https://assure.ameli.fr/.well-known/security.txt)
 * The security.txt initiative website: [https://securitytxt.org/](https://securitytxt.org/)
 * The security.txt RFC: [https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12)
+* All schemas have been done using [draw.io](https://app.diagrams.net/).
