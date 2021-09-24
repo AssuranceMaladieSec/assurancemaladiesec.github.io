@@ -5,14 +5,11 @@ date:   2021-09-22 13:33:19 +0200
 author: cbrocas
 categories: secops
 ---
+**TL;DR:** Finding how to report vulnerabilities detected on web sites and web services has always been challenging for security researchers. But it has also been a challenge for companies and blue teams to publish contact informations in a consistent way accross their sites and services. Let's see if `security.txt` initiative can help us!
 
 {% include toc %}
 
 # Security vulnerabilities reporting: the problem(s)
-
-**TL;DR:** Finding how to report vulnerabilities detected on web sites and web services has always been challenging for security researchers. But it has also been a challenge for companies and blue teams to publish contact informations in a consistent way accross their sites and services.
-
-**Detailled:**
 
 * **Security researchers side:** they want to find a way to report their findings. Until recently, it is only possible in a manual and unconsistant way: 
   * check if any contact are available on the website, 
