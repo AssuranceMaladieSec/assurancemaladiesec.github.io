@@ -19,9 +19,13 @@ categories: secops
   * use one of the email addresses commonly available inside companies (abuse, admin etc) but without having any assurance that their report will be .
 * **Blue teams side:** inside companies, choosing the good way to setup a proper reporting channel and overcoming all sorts of resistance (cultural, organization, technical) are not without challenges. 
 
+**Impacts:**
+* For companies, it generates a **loss of vulnerabilities reports** coming from external security researchers.
+* For security researchers, **this situation is a hassle** that would gain a lot to be streamlined.
+
 # Challenges encountered at Assurance Maladie
 
-Like many big companies, we provide a lot of Internet websites and webservices to our different types of users (citizens, health professionals and employers in our case).
+Like many big companies, we provide a lot of websites and webservices to our different types of users (citizens, health professionals and employers in our case).
 
 These services are:
 * hosted/operated in different locations by different providers (on premise, SaaS, cloud etc)
@@ -36,19 +40,29 @@ These services are:
 
 # The proposal: `security.txt`
 
-What it is? 
+Security.txt is a proposal to standardize the way companies document, on each of their websites, how they want to receive the vulnerability reports and how they will handle them.
+
+Security.txt in detail:
 * It is an [Internet Draft](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt)
 * This RFC defines among others things a well-known URI `.well-known/security.txt` (and fallback URI `/security.txt`)
 * These URI point to the `security.txt` file.
-* The `security.txt` file contains several standardized records allowing websites owners to set contact infos, reporting policy, GPG key to use and so on.
+* The `security.txt` file contains several standardized records allowing companies owners to publish their contact infos, their reporting policy, an eventual GPG key to use and so on.
 
-<u>Example:</u> we can see on this image the contents of the [Deepl website](https://www.deepl.com/)  `security.txt` file. Its content is displayed through the Firefox extension security.txt :
+<u>Example:</u> we can see on this screenshot the contents of the [Deepl website](https://www.deepl.com/)  `security.txt` file. Its content is displayed through the Firefox extension security.txt :
 
 ![security.txt example](/images/posts/securitytxt-example.png)
 
 All the details of the `security.txt` initiative (URI, records etc) are documented on [https://securitytxt.org/](https://securitytxt.org/).
 
 # Assurance Maladie implementation of `security.txt`
+
+Let's see how we handle it at Assurance Maladie IT Security team. 
+
+## Initial situation
+
+As many companies, we had not any consistent informations on our web sites and services to notify security vulnerabilities reporters how to report their findings. Even worse, in the past, we tried to display on our main web site our SOC email address in case people has a security problem with our web site and guess what? Our SOC has been overflowed by not security related notifications but only business oriented questions. Rollback has been done in a few hours. The _"Learning by failing mode"_ was ON ;-)
+
+So when emerged the `security.txt` initiative, we looked at it with a very interested attention.
 
 ## The naive way
 A simple yet naive way of deploy a `security.txt` file is to ask all services managers to get the file and incorporate into their service file system.
