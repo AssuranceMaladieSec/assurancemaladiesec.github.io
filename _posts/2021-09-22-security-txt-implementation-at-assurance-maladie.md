@@ -37,7 +37,7 @@ These services are:
 
 # The proposal: `security.txt`
 
-Security.txt is a proposal to standardize the way companies document, on each of their websites, how they want to receive the vulnerability reports and how they will handle them.
+[Security.txt](https://securitytxt.org/) is a proposal to standardize the way companies document, on each of their websites, how they want to receive the vulnerability reports and how they will handle them.
 
 Security.txt in detail:
 * It is an [Internet Draft](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt)
@@ -45,7 +45,7 @@ Security.txt in detail:
 * These URI point to the `security.txt` file.
 * The `security.txt` file contains several standardized records allowing companies owners to publish their contact infos, their reporting policy, an eventual GPG key to use and so on.
 
-<u>Example:</u> we can see on this screenshot the contents of the [Deepl website](https://www.deepl.com/)  `security.txt` file. Its content is displayed through the Firefox extension security.txt :
+<u>Example:</u> we can see on this screenshot the contents of the [Deepl website](https://www.deepl.com/)  `security.txt` file. Its content is displayed through the [Firefox extension security.txt](https://addons.mozilla.org/fr/firefox/addon/security-txt/) :
 
 ![security.txt example](/images/posts/securitytxt-example.png)
 
@@ -77,7 +77,7 @@ As you can see, one of the Security team darkest nightmares (aka _"Security depe
 
 ![security.txt N copies](/images/posts/centralized-security-txt.png)
 
-We host some of the biggest public web sites in France (our main service has 40M reular users, millions connections on a daily basis).
+We host some of the biggest public web sites in France (our main service has 40M regular users, millions connections on a daily basis).
 
 So our services are behind load balancers/reverse proxies that **we manage**. Due to this fact, we decided that using these **central** IT components would be interesting.
 
@@ -96,12 +96,14 @@ A lot of advantages came up with this decision:
 
 ## Implementation details
 
-According to our existing reporting workflow, we decided to use the following records inside our `security.txt` file:
+According to our existing reporting workflow, we decided to use the following records inside [our security.txt file](https://assure.ameli.fr/.well-known/security.txt):
 * **`Contact:`** through this record, we push the abuse@ email address as main contact point.
 * **`Preferred-Languages:`** the languages we speak/understand.
 * **`Encryption:`** URL of the GnuPG public key of the abuse@ email address.
 * **`Policy:`** URL of our vulnerability reporting policy.
 * **`Acknowledgments:`** URL of the page where we thank/acknowledge all the reporters that responsibily disclose vulnerabilities with us.
+
+And as previously said, the file is digitally signed with our abuse@ private key.
 
 **To host the ressources** pointed by the last 3 records, **we decided to use Github** because it is an external hosting (can be useful in case of massive compromission locally). 
 
