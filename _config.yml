@@ -21,7 +21,7 @@
 title: Assurance Maladie Security Team 
 email: abuse@assurance-maladie.fr
 description: >- # this means to ignore newlines until "baseurl:"
-  Security ressources and feedback shared by the IT Security Department of Assurance Maladie <br>(French public Health Insurance) 
+  Security ressources and feedback shared by the IT Security Department of Assurance Maladie <br>(French public Health Insurance) with the Security Community.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
@@ -44,7 +44,30 @@ read_time: true
 words_per_minute: 200
 search_full_content: true
 date_format: "%d-%m-%Y"
-permalink: /:title:output_ext
+permalink: /:title/
+frtitle: "Équipe Sécurité de l'Assurance Maladie"
+frdescription: "Ressources Sécurité et retours d'expérience partagés par l'équipe de Sécurité Informatique <br> de l'Assurance Maladie avec la communauté Sécurité."
+
+# default languages settings
+
+defaults:
+  #languages
+  -
+    scope:
+      path: ""
+    values:
+      lang: "en"
+      layout: default
+  -
+    scope:
+      path: "en"
+    values:
+      lang: "en"
+  -
+    scope:
+      path: "fr"
+    values:
+      lang: "fr"
 
 
 # Exclude from processing.

@@ -1,7 +1,26 @@
-
-- title: Home
-  url: /
-- title: About
-  url: /about/
-- title: Reporting Vulnerability
-  url: https://assurancemaladiesec.github.io/abuse/reporting/
+en:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Reporting Vulnerability
+    url: https://assurancemaladiesec.github.io/abuse/reporting/
+  - title: Posts in English
+    url: /en/
+    ico: 🇬🇧
+  - title: Articles en Français
+    url: /fr/
+    ico: 🇫🇷
+fr:
+  - title: Accueil
+    url: /
+  - title: A propos
+    url: /a-propos/
+  - title: Rapporter une vulnérabilité
+    url: https://assurancemaladiesec.github.io/abuse/reporting/
+  - title: Articles en Français
+    url: /fr/
+    ico: 🇫🇷
+  - title: Posts in English
+    url: /en/
+    ico: 🇬🇧

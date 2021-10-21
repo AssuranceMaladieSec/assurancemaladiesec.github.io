@@ -1,0 +1,41 @@
+{% if site.data.navigation[page.lang] %}
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">{{ site.data.text[site.locale].menu_label | default: 'Menu' }}</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul>
+        {%- for link in site.data.navigation[page.lang] -%}
+          {%- if link.url contains '://' -%}
+            {%- assign url = link.url -%}
+          {%- else -%}
+            {%- assign url = link.url | relative_url -%}
+          {%- endif -%}
+          {% if link.ico %}
+            <li><a href="{{ url }}" alt="{{ link.title }}" title="{{ link.title }}">{{ link.ico }}</a></li>
+          {% else %} 
+            <li><a href="{{ url }}">{{ link.title }}</a></li>
+          {% endif %}          
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+{% else %}
+<div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">{{ site.data.text[site.locale].menu_label | default: 'Menu' }}</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul>
+        {%- for link in site.data.navigation['en'] -%}
+          {%- if link.url contains '://' -%}
+            {%- assign url = link.url -%}
+          {%- else -%}
+            {%- assign url = link.url | relative_url -%}
+          {%- endif -%}
+          {% if link.ico %}
+            <li><a href="{{ url }}" alt="{{ link.title }}" title="{{ link.title }}">{{ link.ico }}</a></li>
+          {% else %} 
+            <li><a href="{{ url }}">{{ link.title }}</a></li>
+          {% endif %}
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+{% endif %}
