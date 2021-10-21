@@ -32,6 +32,7 @@ github_username:  AssuranceMaladieSec
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 # So Simple parameters
 logo: "/images/logo.jpg"

@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "security.txt implementation @ Assurance Maladie"
+redirect_from:
+  - /security-txt-implementation-at-assurance-maladie.html
 date:   2021-09-22 13:33:19 +0200
 lang: en
 ref: securitytxtatassurancemaladie
