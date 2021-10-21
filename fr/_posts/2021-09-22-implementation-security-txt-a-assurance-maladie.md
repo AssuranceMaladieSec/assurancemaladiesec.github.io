@@ -24,7 +24,7 @@ categories: secops
 
 # Défis rencontrés par l'Assurance Maladie
 
-Comme beaucoup de grandes entreprises, nous opérons un grand nombre de sites web et de services web à destination de nos différents types d'utilisateurs (citoyens, professionels de santé and employeurs).
+Comme beaucoup de grandes entreprises, nous opérons un grand nombre de sites web et de services web à destination de nos différents types d'utilisateurs (citoyens, professionels de santé et employeurs).
 
 Ces services sont :
 * hébergés/opérés dans différents endroits par différents fournisseurs (en interne, SaaS, cloud etc)

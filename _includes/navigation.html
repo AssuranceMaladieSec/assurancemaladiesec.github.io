@@ -10,7 +10,7 @@
             {%- assign url = link.url | relative_url -%}
           {%- endif -%}
           {% if link.ico %}
-            <li><a href="{{ url }}" alt="{{ link.title }}" title="{{ link.title }}">{{ link.ico }}</a></li>
+            <li><a href="{{ url }}" alt="{{ link.title }}" title="{{ link.title }}"><img src="{{ link.ico }}"></a></li>
           {% else %} 
             <li><a href="{{ url }}">{{ link.title }}</a></li>
           {% endif %}          
@@ -30,7 +30,7 @@
             {%- assign url = link.url | relative_url -%}
           {%- endif -%}
           {% if link.ico %}
-            <li><a href="{{ url }}" alt="{{ link.title }}" title="{{ link.title }}">{{ link.ico }}</a></li>
+            <li><a href="{{ url }}" alt="{{ link.title }}" title="{{ link.title }}"><img src="{{ link.ico }}"></a></li>
           {% else %} 
             <li><a href="{{ url }}">{{ link.title }}</a></li>
           {% endif %}

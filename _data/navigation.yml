@@ -7,10 +7,10 @@ en:
     url: https://assurancemaladiesec.github.io/abuse/reporting/
   - title: Posts in English
     url: /en/
-    ico: 🇬🇧
+    ico: /images/flags/uk24.png
   - title: Articles en Français
     url: /fr/
-    ico: 🇫🇷
+    ico: /images/flags/fr24.png
 fr:
   - title: Accueil
     url: /
@@ -20,7 +20,7 @@ fr:
     url: https://assurancemaladiesec.github.io/abuse/reporting/
   - title: Articles en Français
     url: /fr/
-    ico: 🇫🇷
+    ico: /images/flags/fr24.png
   - title: Posts in English
     url: /en/
-    ico: 🇬🇧
+    ico: /images/flags/uk24.png
