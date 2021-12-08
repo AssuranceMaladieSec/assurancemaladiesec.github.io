@@ -106,10 +106,27 @@ Here is an example of a `template.json` file:
  ```
 ## conf.ini : The configuration file
 
+The file `conf.ini` contains the neo4j credentials, the file name of the summary and the report and the template file name. If you want to change the name of the file generated or the input file, it's here.
+
+ ```
+[neo4j_credentials]
+username=PutYourNeo4jLoginHere
+password=PutYourNeo4jPasswordHere
+address=127.0.0.1
+port=7687
+
+[files]
+template_file=template.json
+csv_report=my_report.csv
+txt_summary=my_summary.txt
+ ```
 
 
+# The advantages of FoxTerrier
 
+Finally the advantages of FoxTerrier are:
 
-# The advantages of Fox Terrier
+- Fast: Because FoxTerrier doesn't use a GUI interface and doesn't try to display all the results, it's more faster when requesting data for multiple start objects.
+- Flexible: When you use in BloodHound the `Outbound Control Rights` feature on a object, all vulnerable objects related to it are displayed. With FoxTerrier you can choose the object type you want to target.
+- Multiple start objets in input: You can specify, multiple start objects in the input file. You can also use regex to target start objects with pattern on their name.
 
-blablabla
