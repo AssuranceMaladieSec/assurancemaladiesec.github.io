@@ -13,23 +13,23 @@ categories: ActiveDirectory
 
 # Les origines de FoxTerrier
 
-Comme beaucoup d'entreprises, nous utilisons le trés connu [BloodHound](https://github.com/BloodHoundAD/BloodHound) (merci beaucoup [@_wald0](https://twitter.com/@_wald0), [@CptJesus](https://twitter.com/@CptJesus) et [@harmj0y](https://twitter.com/@harmj0y)!) afin d'identifier de potentiels objets vulnérables et chemins de compromission au sein de notre Active Directory (AD).
+Comme beaucoup d'entreprises, nous utilisons le très connu [BloodHound](https://github.com/BloodHoundAD/BloodHound) (merci beaucoup [@_wald0](https://twitter.com/@_wald0), [@CptJesus](https://twitter.com/@CptJesus) et [@harmj0y](https://twitter.com/@harmj0y)!) afin d'identifier de potentiels objets vulnérables et chemins de compromission au sein de notre Active Directory (AD).
 
-Cependant, durant nos audits AD récurrents nous nous sommes heurtés à certaines limitations de l'outil. En effet, nous avions besoins de :
-- Rapports contenant l'ensemble des objets vulnérables
-- Synthéses des objets vulnérables
-- Utiliser plusieurs `start nodes` pour nos recherches
-- Effectuer des recherches dans la base contenant les données de BloodHound (Neo4j) sans utiliser la GUI
+Cependant, au fil de nos audits AD, nous nous sommes heurtés à certaines limitations de l'outil. En effet, nous avions besoins de :
+- rapports contenant l'ensemble des objets vulnérables ,
+- synthèses des objets vulnérables ,
+- utiliser plusieurs `start nodes` pour nos recherches
+- et effectuer des recherches dans la base contenant les données de BloodHound (Neo4j) sans utiliser la GUI .
 
 > **Neo4j**: Neo4j est un système de gestion de base de données basé sur les graphes. L'environnement Bloodhound utilise Neo4j pour: 
-- Stocker les données Active Directory récupérées par `SharpHound`
-- Requêter ces données 
+- stocker les données Active Directory récupérées par `SharpHound`
+- requêter ces données 
 
 Il est important de préciser qu'il est techniquement possible d'utiliser plusieurs `start nodes` pour ses recherches au sein de BloodHound. Cela demande de créer et exécuter ses propres `Cypher Queries` au sein de la `Raw Query bar` de BloodHound.
 
 > **Cypher Queries**: Cypher est le langage de requête pour graphe de [Neo4j](https://neo4j.com). Une [Cypher Query](https://neo4j.com/developer/cypher/) est donc une requête du langage Cypher.
 
-Cependant, les Cypher Queries sont complexes à appréhender, et créer de toute piéces des requêtes chaque fois que cela était nécessaire n'était pas une option dans notre cas. 
+Cependant, les Cypher Queries sont complexes à appréhender. Et créer de toutes pièces ce type de requêtes chaque fois que cela était nécessaire n'était pas une option dans notre cas :-)
 
 # BloodHound fournit-il des rapports ? 
 
@@ -37,7 +37,7 @@ Malheureusement non. BloodHound peut fournir un fichier json des résultats cour
 
 # FoxTerrier. Qui est-il ? Quels sont ses réseaux ?
 
-FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de l'écosystème BloodHound***. Code source et contributions disponibles [au sein du dépot GitHub de l'équipe sécurité de l'Assurance Maladie](https://github.com/AssuranceMaladieSec/FoxTerrier).
+FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de l'écosystème BloodHound***. Le code source est disponible et les contributions sont possibles sur [le dépot GitHub de l'équipe sécurité de l'Assurance Maladie](https://github.com/AssuranceMaladieSec/FoxTerrier).
 
 > FoxTerrier peut être vu comme **une version plus flexible et sans GUI des fonctionnalités `OUTBOUND CONTROL RIGHTS` and `EXECUTION RIGHTS (RDP only)` de BloodHound**. 
 > 
@@ -45,10 +45,10 @@ FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de 
 
 FoxTerrier permet de :
 
-* **Définir plusieurs `Start node`**:  Il identifie tous les objets vulnérables (GPO, OU, Utilisateur, Groupe, Machine où il est possible de se RDP) liés à une liste pré-définie d'utilisateurs/groupes.
-* **Définir le type d'objet vulnérable souhaité** : Contrairement à la fonctionnalité `OUTBOUND CONTROL RIGHTS` de Bloodhound, FoxTerrier permet d'affiner sa recherche sur des types spécifiques d'objets vulnérables.
+* **définir plusieurs `Start node` (sans avoir à écrire de Cypher Queries)** :  Il identifie tous les objets vulnérables (GPO, OU, Utilisateur, Groupe, Machine où il est possible de se RDP) liés à une liste pré-définie d'utilisateurs/groupes.
+* **définir le(s) type(s) d'objet(s) vulnérable(s) que l'on souhaite obtenir** : Contrairement à la fonctionnalité `OUTBOUND CONTROL RIGHTS` de Bloodhound, FoxTerrier permet d'affiner sa recherche sur des types spécifiques d'objets vulnérables.
  Par exemple, si vous souhaitez ne cibler que les GPOs vulnérables pour certains utilisateurs/groupes, vous pouvez :)
-* **Utiliser des regexp** : Des expressions régulières peuvent être utilisées au sein des noms de `start node`. Cela peut être pratique si vous souhaitez, par exemple, cibler en `start node` l'ensemble des utilisateurs/groupes répondant à un motif spécifique dans leur nom.
+* **utiliser des regexp** : Des expressions régulières peuvent être utilisées au sein des noms de `start node`. Cela peut être pratique si vous souhaitez, par exemple, cibler en `start node` l'ensemble des utilisateurs/groupes répondant à un motif spécifique dans leur nom.
 
 > **Pré-requis:** FoxTerrier nécessite une base Neo4j préalablement peuplée avec les données Active Directory recueillies par SharpHound.
 
@@ -57,10 +57,10 @@ FoxTerrier permet de :
 A l'instar de la GUI BloodHound, FoxTerrier travaille avec les données Active Directory récupérées préalablement par SharpHound et chargées au sein de la base Neo4j. 
 
 Avant d'utiliser FoxTerrier, assurez vous :
-- D'avoir un scan Active Directory effectué par SharpHound en votre possession
-- D'avoir chargé ce scan dans la base Neo4j
+- d'avoir un scan Active Directory effectué par SharpHound en votre possession ,
+- d'avoir chargé ce scan dans la base Neo4j .
 
-FoxTerrier créé des Cypher Queries spécifiques en utilisant les données fournies dans le fichier d'entrée nommé `template.json` et les utilises afin de requêter la base Neo4j.
+FoxTerrier créé **pour vous** des Cypher Queries spécifiques en utilisant les données fournies dans le fichier d'entrée nommé `template.json` et les utilise afin de requêter la base Neo4j.
 
 ![FoxTerrier Schema](/images/posts/requests.png)
 
@@ -106,7 +106,7 @@ Voici un exemple de fichier `template.json` :
  ```
 ## conf.ini : Le fichier de configuration
 
-Le fichier `conf.ini` contient les données de connexion à la base neo4j, les noms qui seront données au fichier de synthése et au rapport et enfin le nom du fichier d'entrée à utiliser.
+Le fichier `conf.ini` contient les données de connexion à la base neo4j, les noms qui seront données au fichier de synthèse et au rapport et enfin le nom du fichier d'entrée à utiliser.
  ```
 [neo4j_credentials]
 username=PutYourNeo4jLoginHere
@@ -122,7 +122,7 @@ txt_summary=my_summary.txt
 
 # Exemple de résultats de FoxTerrier
 
-## Un exemple de fichier de synthése `summary.txt` :
+## Un exemple de fichier de synthèse `summary.txt` :
 
 ```
 --- Load JSON File C:\Users\XXX\Documents\Tool\FoxTerrier\template.json
@@ -204,11 +204,11 @@ CanRDP : 5990
 # Conclusion
 
 Selon nous, FoxTerrier peut vous être utile car il est :
-- Rapide : Puisque FoxTerrier n'utilise pas la GUI BloodHound et n'essaie pas d'afficher les résultats de ses requêtes. Il est plus rapide lors de l'utilisation de Cypher Queries utilisant plusieurs `start node`.
-- Flexible : Lorsque l'on utilise la fonctionnalité `Outbound Control Rights` sur un objet, tous les objets vulnérables (directe et indirecte) sont affichés. Avec FoxTerrier, vous pouvez choisir le type d'objet que vous souhaitez cibler.
-- Permet d'utiliser plusieurs `start object` : Vous pouvez définir plusieurs `start node` au sein du fichier d'entrée. Vous pouvez également utiliser des regexp pour cibler des `start node` avec des motifs au sein de leur nom.
+- rapide : Puisque FoxTerrier n'utilise pas la GUI BloodHound et n'essaie pas d'afficher les résultats de ses requêtes. Il est plus rapide lors de l'utilisation de Cypher Queries utilisant plusieurs `start node`.
+- flexible : Lorsque l'on utilise la fonctionnalité `Outbound Control Rights` sur un objet, tous les objets vulnérables (directe et indirecte) sont affichés. Avec FoxTerrier, vous pouvez choisir le type d'objet que vous souhaitez cibler.
+- permet d'utiliser plusieurs `start node` : Vous pouvez définir plusieurs `start node` au sein du fichier d'entrée. Vous pouvez également utiliser des regexp pour cibler des `start node` avec des motifs au sein de leur nom.
 
-Mais la seule façon d'être sur que FoxTerrier peut vous aider lors de vos audits d'Active Directory et de [le télécharger](https://github.com/AssuranceMaladieSec/FoxTerrier) et de l'utiliser ! 
+Mais la seule façon d'être sur que FoxTerrier peut vous aider lors de vos audits d'Active Directory est de [le télécharger](https://github.com/AssuranceMaladieSec/FoxTerrier) et de l'utiliser ! 
 
 Problémes, questions, envie de contribuer ? N'hésitez à faire tout cela sur [le dépot GitHub de FoxTerrier](https://github.com/AssuranceMaladieSec/FoxTerrier) :)
 
