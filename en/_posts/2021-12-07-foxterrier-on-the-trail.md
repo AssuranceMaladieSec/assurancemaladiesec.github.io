@@ -38,7 +38,7 @@ Unfortunately, no. BloodHound can provide a json of your current results or a pn
 
 # What is FoxTerrier
 
-FoxTerrier is a Free Software tool written in Python and ***working in the BloodHound environment***. Source code and cooperation available on [its repository under the Github of the Assurance Maladie IT Security team](https://github.com/AssuranceMaladieSec/FoxTerrier).
+FoxTerrier is a Free Software tool written in Python and ***working in the BloodHound environment***. Source code and cooperation available on [its repository under the GitHub of the Assurance Maladie IT Security team](https://github.com/AssuranceMaladieSec/FoxTerrier).
 
 > FoxTerrier can be seen as a **more flexible version without GUI of BloodHound `OUTBOUND CONTROL RIGHTS` and `EXECUTION RIGHTS (RDP only)` features**. 
 > 
@@ -213,6 +213,6 @@ So according to us, FoxTerrier can help you because it is:
 
 But, the only way to be sure FoxTerrier can help you during your AD security assessment is to [download it](https://github.com/AssuranceMaladieSec/FoxTerrier) and use it!
 
-Issues, questions, cooperation will be welcomed on FoxTerrier Github repo :)
+Issues, questions, cooperation will be welcomed on [FoxTerrier GitHub repository](https://github.com/AssuranceMaladieSec/FoxTerrier) hosted under the Assurance Maladie IT Security team organization on GitHub :)
 
-Last but not least: nothing would have been possible without the work of some giants aka [@_wald0](https://twitter.com/@_wald0), [@CptJesus](https://twitter.com/@CptJesus) and [@harmj0y](https://twitter.com/@harmj0y). Warm thanks for creating Bloodhound and distributing it undera Free Software license!
+**Last but not least:** nothing would have been possible without the work of **some giants** aka [@_wald0](https://twitter.com/@_wald0), [@CptJesus](https://twitter.com/@CptJesus) and [@harmj0y](https://twitter.com/@harmj0y). **Warm thanks for creating Bloodhound and distributing it under a Free Software license!**
