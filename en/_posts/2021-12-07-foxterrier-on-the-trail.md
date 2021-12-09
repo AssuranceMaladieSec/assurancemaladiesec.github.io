@@ -7,7 +7,7 @@ ref: foxterrier
 author: acp 
 categories: ActiveDirectory
 ---
-**TL;DR:** BloodHound doesn't provides reports on results. FoxTerrier does ! If you want to find all vulnerable AD objects related to specific users/groups, and put the results in a nice `csv` file, FoxTerrier is for you !
+**TL;DR:** You use Sharphound/Bloodhound to collect data/audit your AD and you would like to generate report of vulnerable objects in your AD? You should give a look to FoxTerrier! 
 
 {% include toc %}
 
