@@ -1,10 +1,10 @@
-    {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
-    {% if posts.size == 0 %}
-        {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% assign translations=site.posts | where:"ref", page.ref | sort: 'lang' %}
+    {% if translations.size == 0 %}
+        {% assign translations=site.pages | where:"ref", page.ref | sort: 'lang' %}
     {% endif %}
-    {% if posts.size > 1 %}
+    {% if translations.size > 1 %}
     <h3 class="page-taxonomies-title">translations:</h3><br>
-        {% for post in posts %}
+        {% for post in translations %}
         <img src="{{ site.data.languages[post.lang].icon }}"> <a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }}" title="View in {{post.lang}}">{{ site.data.languages[post.lang].label }}</a>  
         {% endfor %}
     {% endif %}
