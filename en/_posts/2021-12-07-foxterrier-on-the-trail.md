@@ -47,9 +47,9 @@ FoxTerrier is a Free Software tool written in Python and ***working in the Blood
 FoxTerrier allows you to :
 
 * **set multiple starting points**: identify, from a predefined list of user/groups, all the vulnerable objects (GPO, OU, User, Group, machine with RDP connection available for the object) that can be compromised by them.
-* **set the type of the desired vulnerable objects**: unlike the BloodHound `OUTBOUND CONTROL RIGHTS` feature, FoxTerrier allows you to request the type of object you want for specifics users/groups. 
+* **set the type of the desired vulnerable objects**: unlike the BloodHound `OUTBOUND CONTROL RIGHTS` feature, FoxTerrier allows you to narrow down your requests on specific objects types. 
   For instance, if you want to retrieve only the vulnerable GPO that can be compromised by a list of predefined users/groups, you can :)
-* **use regexp**: predefined users and groups can be expressed as regular expressions. It can be handy if, for instance, you have generic groups with pattern in the name and want to target all of them.
+* **use regexp**: predefined users and groups can be expressed as regular expressions. It can be handy, for instance, if you want to target, in your `start node`, all users/groups matching a specific pattern.
 
 > **Prerequisite:** FoxTerrier relies on the Neo4j databases already filled with Active Directory information provided by SharpHound.
 
