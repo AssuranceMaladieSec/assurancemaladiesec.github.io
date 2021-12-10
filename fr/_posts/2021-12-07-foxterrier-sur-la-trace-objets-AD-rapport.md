@@ -35,9 +35,11 @@ Cependant, les Cypher Queries sont complexes à appréhender, et créer de toute
 
 Malheureusement non. BloodHound peut fournir un fichier json des résultats courants dans l'interface ou une image (png) de ceux-la.  BloodHound n'est pas conçu pour fournir des rapports de ces résultats. 
 
+Vous pouvez via le [script `bloodhoundanalytics.py`](https://github.com/BloodHoundAD/BloodHound-Tools/blob/master/bloodhoundanalytics.py) du [dépôt officiel `BloodHound-Tools`](https://github.com/BloodHoundAD/BloodHound-Tools) récupérer des informations intéressantes et cela au format `xlsx`. Cependant, ce script n'est pas utile pour notre cas de figure (retrouver tous les objets vulnérables pour des utilisateurs/groupes spécifiques).
+
 # FoxTerrier. Qui est-il ? Quels sont ses réseaux ?
 
-FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de l'écosystème BloodHound***. Code source et contributions disponibles [au sein du dépot GitHub de l'équipe sécurité de l'Assurance Maladie](https://github.com/AssuranceMaladieSec/FoxTerrier).
+FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de l'écosystème BloodHound***. Code source et contributions disponibles [au sein du dépôt GitHub de l'équipe sécurité de l'Assurance Maladie](https://github.com/AssuranceMaladieSec/FoxTerrier).
 
 > FoxTerrier peut être vu comme **une version plus flexible et sans GUI des fonctionnalités `OUTBOUND CONTROL RIGHTS` and `EXECUTION RIGHTS (RDP only)` de BloodHound**. 
 > 
@@ -119,6 +121,24 @@ template_file=template.json
 csv_report=my_report.csv
 txt_summary=my_summary.txt
  ```
+## Installation 
+
+Pour "installer" FoxTerrier, vous avez seulement besoin de cloner le dépôt et installer le module `neo4j` pour python.
+
+```
+git clone https://github.com/AssuranceMaladieSec/FoxTerrier
+pip install neo4j
+```
+
+## Utilisation
+
+L'utilisation de FoxTerrier nécessite que **la base Neo4j soit démarrée et peuplée avec les données récupérées par SharpHound**.
+
+Une fois vos fichiers `conf.ini` et `template.json` prêts, vous avez juste à lancer le script !
+
+```
+python FoxTerrier.py
+```
 
 # Exemple de résultats de FoxTerrier
 
@@ -185,6 +205,7 @@ CanRDP : 5990
 
 ## Un aperçu du contenu de `report.csv` :
 
+Les résultats sont affichés ici dans un tableau pour des raisons de présentation. Bien évidemment, les données stockées dans le fichier de rapport sont en csv.
 
 | Start Object 				| Vulnerable Object 				|Distinguished Name Vulnerable Object 													| Type |
 | -----------  				| 	----------- 					| ----------- 																			|  -----------  |
@@ -210,6 +231,6 @@ Selon nous, FoxTerrier peut vous être utile car il est :
 
 Mais la seule façon d'être sur que FoxTerrier peut vous aider lors de vos audits d'Active Directory et de [le télécharger](https://github.com/AssuranceMaladieSec/FoxTerrier) et de l'utiliser ! 
 
-Problémes, questions, envie de contribuer ? N'hésitez à faire tout cela sur [le dépot GitHub de FoxTerrier](https://github.com/AssuranceMaladieSec/FoxTerrier) :)
+Problémes, questions, envie de contribuer ? N'hésitez à faire tout cela sur [le dépôt GitHub de FoxTerrier](https://github.com/AssuranceMaladieSec/FoxTerrier) :)
 
 Enfin, ce projet n'aurait pas vu le jour sans l'énorme travail déjà existant des developpeurs de BloodHound aka [@_wald0](https://twitter.com/@_wald0), [@CptJesus](https://twitter.com/@CptJesus) et [@harmj0y](https://twitter.com/@harmj0y). Merci d'avoir créer cet outil et de le distribuer sous une licence Libre !

@@ -37,6 +37,10 @@ However, Cypher Queries are complex and crafting requests manually everytime we 
 
 Unfortunately, no. BloodHound can provide a json of your current results or a png of it. And that's all. BloodHound is simply not designed for this purpose. 
 
+You can with the [bloodhoundanalytics.py script](https://github.com/BloodHoundAD/BloodHound-Tools/blob/master/bloodhoundanalytics.py) of the [Official BloodHound-Tools repository](https://github.com/BloodHoundAD/BloodHound-Tools) retrieve some interesting BloodHound results in a `xlsx` format. But this script is not useful for our case (finding all vulnerable objects for specific users/groups).
+
+
+
 # What is FoxTerrier
 
 FoxTerrier is a Free Software tool written in Python and ***working in the BloodHound environment***. Source code and cooperation available on [its repository under the GitHub of the Assurance Maladie IT Security team](https://github.com/AssuranceMaladieSec/FoxTerrier).
@@ -69,6 +73,7 @@ FoxTerrier creates specific Cypher Queries by using the data provided in the inp
 > BloodHound and FoxTerrier can be used simultaneously.
 
 To work, FoxTerrier needs 2 files: `conf.ini` and `template.json`
+
 
 ## template.json: The input file
 
@@ -122,6 +127,25 @@ template_file=template.json
 csv_report=my_report.csv
 txt_summary=my_summary.txt
  ```
+
+## Installation 
+
+To "install" FoxTerrier, you just need to clone the repo and install the neo4j module for python.
+
+```
+git clone https://github.com/AssuranceMaladieSec/FoxTerrier
+pip install neo4j
+```
+
+## Usage
+
+To Use FoxTerrier, The Neo4j **database must be up and running and already filled with the SharpHound data**. 
+
+When your `conf.ini` and `template.json` are ready, You just have to launch the script !
+
+```
+python FoxTerrier.py
+```
 
 # A FoxTerrier output
 
@@ -188,6 +212,7 @@ CanRDP : 5990
 
 ## A `report.csv` example:
 
+The results are displayed here in a table for presentation purpose. The results are stored in a csv format in the report file.
 
 | Start Object 				| Vulnerable Object 				|Distinguished Name Vulnerable Object 													| Type |
 | -----------  				| 	----------- 					| ----------- 																			|  -----------  |
