@@ -9,3 +9,14 @@ cbrocas:
     - title: GitHub
       url: https://github.com/cbrocas
       icon: fab fa-github-square
+acp:
+  name: Alice Climent-Pommeret
+  picture: /images/authors/acp.jpeg
+  twitter: AliceCliment
+  links:
+    - title: Twitter
+      url: https://twitter.com/alicecliment
+      icon: fab fa-twitter-square
+    - title: GitHub
+      url: https://github.com/xalicex
+      icon: fab fa-github-square
