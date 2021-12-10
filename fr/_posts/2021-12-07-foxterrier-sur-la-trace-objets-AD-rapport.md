@@ -39,7 +39,7 @@ Vous pouvez via le [script `bloodhoundanalytics.py`](https://github.com/BloodHou
 
 # FoxTerrier. Qui est-il ? Quels sont ses réseaux ?
 
-FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de l'écosystème BloodHound***. Le code source est disponible et les contributions sont possibles sur [le dépot GitHub de l'équipe sécurité de l'Assurance Maladie](https://github.com/AssuranceMaladieSec/FoxTerrier).
+FoxTerrier est un Logiciel Libre écrit en Python et ***fonctionnant au sein de l'écosystème BloodHound***. Le code source est disponible et les contributions sont possibles sur [le dépot GitHub de l'équipe Sécurité de l'Assurance Maladie](https://github.com/AssuranceMaladieSec/FoxTerrier).
 
 > FoxTerrier peut être vu comme **une version plus flexible et sans GUI des fonctionnalités `OUTBOUND CONTROL RIGHTS` and `EXECUTION RIGHTS (RDP only)` de BloodHound**. 
 > 

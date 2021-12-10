@@ -139,9 +139,9 @@ pip install neo4j
 
 ## Usage
 
-To Use FoxTerrier, The Neo4j **database must be up and running and already filled with the SharpHound data**. 
+To Use FoxTerrier, the Neo4j **database must be up and running and already filled with the SharpHound data**. 
 
-When your `conf.ini` and `template.json` are ready, You just have to launch the script !
+When your `conf.ini` and `template.json` are ready, you just have to launch the script !
 
 ```
 python FoxTerrier.py
