@@ -37,7 +37,7 @@ However, Cypher Queries are complex and crafting requests manually everytime we 
 
 Unfortunately, no. BloodHound can provide a json of your current results or a png of it. And that's all. BloodHound is simply not designed for this purpose. 
 
-You can with the [bloodhoundanalytics.py script](https://github.com/BloodHoundAD/BloodHound-Tools/blob/master/bloodhoundanalytics.py) of the [Official BloodHound-Tools repository](https://github.com/BloodHoundAD/BloodHound-Tools) retrieve some interesting BloodHound results in a `xlsx` format. But this script is not useful for our case (finding all vulnerable objects for specific users/groups).
+You can with the [`bloodhoundanalytics.py` script](https://github.com/BloodHoundAD/BloodHound-Tools/blob/master/bloodhoundanalytics.py) of the [Official `BloodHound-Tools` repository](https://github.com/BloodHoundAD/BloodHound-Tools) retrieve some interesting BloodHound results in a `xlsx` format. But this script is not useful for our case (finding all vulnerable objects for specific users/groups).
 
 
 
