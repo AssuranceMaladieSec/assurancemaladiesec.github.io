@@ -235,7 +235,8 @@ So according to us, FoxTerrier can help you because it is:
 
 - Fast: Because FoxTerrier doesn't use a GUI interface and doesn't try to display all the results, it's more faster when requesting data for multiple start objects.
 - Flexible: When you use in BloodHound the `Outbound Control Rights` feature on a object, all vulnerable objects (direct and indirect) related to it are displayed. With FoxTerrier you can choose the object type you want to target.
-- Multiple start objects in input: You can specify, multiple start objects in the input file. You can also use regex to target start objects with pattern on their name.
+- Multiple `start node` in input: You can specify, multiple `start node` in the input file. You can also use regex to target `start node` with pattern on their name.
+
 
 But, the only way to be sure FoxTerrier can help you during your AD security assessment is to [download it](https://github.com/AssuranceMaladieSec/FoxTerrier) and use it!
 
