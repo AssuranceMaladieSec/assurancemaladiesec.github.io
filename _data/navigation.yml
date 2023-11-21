@@ -5,6 +5,8 @@ en:
     url: /about/
   - title: Reporting Vulnerability
     url: https://assurancemaladiesec.github.io/abuse/reporting/
+  - title: Talks
+    url: https://github.com/AssuranceMaladieSec/talks/
   - title: Posts in English
     url: /en/
     ico: /images/flags/uk24.png
@@ -18,6 +20,8 @@ fr:
     url: /a-propos/
   - title: Rapporter une vulnérabilité
     url: https://assurancemaladiesec.github.io/abuse/reporting/
+  - title: Conférences
+    url: https://github.com/AssuranceMaladieSec/talks/
   - title: Articles en Français
     url: /fr/
     ico: /images/flags/fr24.png
